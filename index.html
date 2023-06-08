@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>FUNCTION-HANDS-ON-2</title>
+</head>
+
+<body>
+  <div class="container1">
+
+    <div class="questions">
+      <!-- Question 1 -->
+      <div class="heading">Function-hands on 2</div>
+      <div class="container">
+        <div class="question"> Q1.
+          Create one function with zero parameter having a console statement;
+        </div>
+        <pre class="ans" id="ans1">
+          function zeroPara(){
+            console.log("This is a function with zero parameter");
+          }
+          zeroPara();
+        </pre>
+      </div>
+      <!-- Question 2 -->
+
+      <div class="container ">
+        <div class="question">Q2.
+          Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"
+        </div>
+        <pre class="ans" id="ans2">
+          function sum(a,b){
+          console.log(a+b);
+        }
+        sum(3,4);
+        </pre>
+      </div>
+      <!-- Question 3 -->
+
+      <div class="container">
+        <div class="question"> Q3.
+          Create one arrow function
+        </div>
+
+        <pre class="ans" id="ans3">
+          const arrowFunction =()=>{
+            return "arrow function";
+        }
+        arrowFunction();
+      </pre>
+      </div>
+      <!-- Question 4 -->
+
+      <div class="container ">
+        <div class="question">Q4.
+          <pre>
+          Print output:
+          var x = 21;
+          var girl = function () {
+          console.log(x);
+          var x = 20;
+          };
+          girl ();
+          
+        </pre>
+        </div>
+        <div class="ans" id="ans4">
+          undefined <br>
+          at line console.log(x) there are 2 x one is local and second is global(x=21)
+          so console.log(x) take the value of x (in local memory)
+          which is <b>undefined</b> (because of hoisting) as this x is created using var keyword.
+
+
+        </div>
+      </div>
+      <!-- Question 5 -->
+
+      <div class="container ">
+        <div class="question">
+          Q5.
+          <pre>
+          Print output:
+          var x = 21;
+          girl ();
+          console.log(x)
+          function girl() {
+          console.log(x);
+          var x = 20;
+          };
+        </pre>
+
+        </div>
+
+        <div class="ans">
+          undefined 21 <br>
+          <b>first</b> girl() is being called at line console.log(x) there are 2 x one is local and second is
+          global(x=21)
+          so console.log(x) take the value of x (in local memory)
+          which is <b>undefined</b> (because of hoisting) as this x is created using var keyword.
+          <b>second</b> now console.log(x) take the value of global x which is 21 so it will print 21
+
+        </div>
+      </div>
+      <!-- Question 6 -->
+      <div class="container">
+        <div class="question">
+          Q6.
+          <pre>
+            Print output
+
+            var x = 21;
+            a();
+            b();
+  
+            function a() {
+  
+            x = 20;
+            console.log(x);
+            };
+            function b() {
+  
+            x = 40;
+            console.log(x);
+            };
+          </pre>
+
+
+        </div>
+        <div class="ans">
+          20 40 <br>
+          when x is declear without any var,let ,const than that variable is global
+          so when a is being called and that time value of x is 20 and when b is being called
+          at that time value of x is 40 .
+        </div>
+      </div>
+      <!-- Question 7 -->
+      <div class="container">
+        <div class="question">Q7.
+          Write a function that accepts parameter n and returns factorial of n
+        </div>
+        <div class="ans">
+          <label for="ansInput">Enter the value of n :</label>
+          <input type="number" id="ansInput">
+          <button id="ans7Btn">click</button>
+          <div>
+            output is: <span id="ans7"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Question 1 of Day 2 -->
+      <h1>Day 2</h1>
+      <div class="container container8">
+        <div class="question">Q1.
+          <pre>
+          "Guess the Output
+
+          function FindSum(a, b){
+          return a + b;
+          }
+
+          function DisplayData(data, batch){
+          console.log(`i am from ${data} and My batch is EA${batch}`)
+          }
+
+          DisplayData(""PrepBytes"", FindSum(10, 9));"
+        </pre>
+        </div>
+        <div class="ans">
+          i am from <b>PrepBytes</b> and My batch is EA <b>19</b><br>
+          Here, FindSum(10,9) is a callback function and DisplayData(""PrepBytes"", FindSum(10, 9)) is a High Order
+          Function
+          and callback is async in nature so first callback Function is being called and return a+b (which is 19) and
+          than DisplayData() is
+          execute with the parameter of (""PrepBytes"",19).
+        </div>
+      </div>
+      <!-- Question 2 of day 2 -->
+      <div class="container">
+        <div class="question">Q2.
+          <pre>
+            Guess the output
+
+            Abc();
+            const Abc = function(){
+            let value = 20;
+            console.log(value);
+            }
+          </pre>
+
+          <div class="ans">
+            <b>Uncaught ReferenceError: Cannot access 'Abc' before initialization</b> <br>
+            Abc is a function expression and In function epression there is hoisting so, when Abc() is being called before the function declearation it throw an error</div>
+        </div>
+      
+      </div>
+      <!-- Question 3 of day 2 -->
+      <div class="container">
+        <div class="question">Q3.
+          <pre>
+        "Guess the output
+
+        var a = 10;
+        (function (){
+        console.log(a);
+        var a = 20;
+        })();"
+      </pre>
+        </div>
+        <div class="ans">
+          undefined <br>
+          This is a self executing function  at line console.log(a) there are two 'a' one is local and second is global(a=10)
+          so console.log(a) take the value of a (in local memory)
+          which is <b>undefined</b> (because of hoisting) as this x is created using var keyword.
+        </div>
+      </div>
+      <!-- Question 4 of day 2 -->
+      <div class="container container4">
+        <div class="question">Q4.
+
+          <pre>
+            Guess the Output
+            const greet = function(name){
+            return function(m){
+  
+            console.log(`Hi!! ${name}, ${m}`);
+            }
+            }
+  
+            const greet_message = greet('EA19');
+            greet_message(""Welcome To PrepBytes"")
+        </pre>
+        </div>
+        <div>
+          <div class="ans">
+            Hi!! EA19, Welcome To PrepBytes <br>
+            here, when greet('EA19') is being called then
+            it return a function  "function(name)" and this function is assign to
+            greet_message and in another line when greet_message(""Welcome To PrepBytes"") is being called
+            then it prints " Hi!! EA19, Welcome To PrepBytes".
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
